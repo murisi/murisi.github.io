@@ -1,12 +1,20 @@
+# Author: Murisi Tarusenga
+
+# Tags for various types of arithmetic expressions
+
 NUM = 0
 ADD = 1
 SUB = 2
 MUL = 3
 DIV = 4
 
+# Parse a binary operation
+
 def parse_binop(expr_str, char, tag):
 	depth = 0
+	# Find the supplied sign so as to partition expression into two
 	for i in range(0, len(expr_str)):
+		# Ignore the signs occuring in parentheses
 		if expr_str[i] == '(':
 			depth += 1
 		elif expr_str[i] == ')':
@@ -16,6 +24,8 @@ def parse_binop(expr_str, char, tag):
 			right_expr = parse_expr(expr_str[i+1:len(expr_str)])
 			return (tag, left_expr, right_expr)
 	return None
+
+# Parse an arithmetic expression
 
 def parse_expr(expr_str):
 	expr = parse_binop(expr_str, '-', SUB)
@@ -31,6 +41,8 @@ def parse_expr(expr_str):
 	else:
 		return (NUM, int(expr_str))
 
+# Convert an arithmetic expression to a string
+
 def expr_to_str(expr):
 	if expr[0] == ADD:
 		return "(" + expr_to_str(expr[1]) + ")+(" + expr_to_str(expr[2]) + ")"
@@ -42,6 +54,8 @@ def expr_to_str(expr):
 		return "(" + expr_to_str(expr[1]) + ")/(" + expr_to_str(expr[2]) + ")"
 	if expr[0] == NUM:
 		return str(expr[1])
+
+# Evaluate an arithmetic expression
 
 def eval_expr(expr):
 	if expr[0] == ADD:
@@ -55,8 +69,12 @@ def eval_expr(expr):
 	if expr[0] == NUM:
 		return expr[1]
 
+# Check if arithmetic expression is a fraction
+
 def is_frac(expr):
 	return expr[0] == DIV and expr[1][0] == NUM and expr[2][0] == NUM
+
+# Convert a number to a fraction, otherwise leave as is
 
 def to_frac(expr, steps):
 	if expr[0] == NUM:
@@ -64,6 +82,8 @@ def to_frac(expr, steps):
 		steps.append((expr, expr1, "Turned the number " + expr_to_str(expr) + " into a fraction by dividing it by 1."))
 		return expr1
 	else: return expr
+
+# Add two fractions together and record the steps necessary
 
 def add_frac(expr, steps):
 	expr1 = (ADD, to_frac(expr[1], steps), to_frac(expr[2], steps))
@@ -77,6 +97,8 @@ def add_frac(expr, steps):
 		+ " together."))
 	return expr3
 
+# Subtract a fraction from another and record the steps necessary
+
 def sub_frac(expr, steps):
 	expr1 = (SUB, to_frac(expr[1], steps), to_frac(expr[2], steps))
 	expr2 = (SUB, (DIV, (NUM, expr1[1][1][1] * expr1[2][2][1]), (NUM, expr1[1][2][1] * expr1[2][2][1])),
@@ -88,12 +110,16 @@ def sub_frac(expr, steps):
 	steps.append((expr2, expr3, "Subtracted the numerator of " + expr_to_str(expr2[2]) + " from " + expr_to_str(expr2[1]) + "."))
 	return expr3
 
+# Multiply two fractions together and record the steps necessary
+
 def mul_frac(expr, steps):
 	expr1 = (MUL, to_frac(expr[1], steps), to_frac(expr[2], steps))
 	expr2 = (DIV, (NUM, expr1[1][1][1] * expr1[2][1][1]), (NUM, expr1[1][2][1] * expr1[2][2][1]))
 	steps.append((expr1, expr2, "Multiplied the numerators and denominators of " + expr_to_str(expr1[1]) + " and "
 		+ expr_to_str(expr1[2]) + " together."))
 	return expr2
+
+# Divide a fraction into another and record the steps necessary
 
 def div_frac(expr, steps):
 	if is_frac(expr[1]) or is_frac(expr[2]):
@@ -105,6 +131,8 @@ def div_frac(expr, steps):
 			+ expr_to_str((DIV, expr1[2][2], expr1[2][1])) + " together."))
 		return expr3
 	else: return expr
+
+# Simplify an arithmetic expression to a fraction
 
 def simplify_frac(expr, steps):
 	if expr[0] == NUM:
@@ -119,12 +147,15 @@ def simplify_frac(expr, steps):
 		return div_frac((DIV, simplify_frac(expr[1], steps), simplify_frac(expr[2], steps)), steps)
 	return expr
 
-def print_log(steps):
+# Print a list of recorded arithmetic steps
+
+def print_steps(steps):
 	for entry in steps:
 		print(expr_to_str(entry[0]) + " -> " + expr_to_str(entry[1]) + " (" + entry[2] + ")\n")
 
 # Print the steps to simplify the expression ((5/3+6+7/2)*5/3)/(1/2)
+
 steps = []
 simplify_frac(parse_expr("((5/3+6+7/2)*5/3)/(1/2)"), steps)
-print_log(steps)
+print_steps(steps)
 
