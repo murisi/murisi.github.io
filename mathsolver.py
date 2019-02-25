@@ -10,31 +10,27 @@ DIV = 4
 
 # Parse a binary operation
 
-def parse_binop(expr_str, char, tag):
+def parse_binop(expr_str, char_dict):
 	depth = 0
 	# Find the supplied sign so as to partition expression into two
-	for i in range(0, len(expr_str)):
+	for i in range(len(expr_str) - 1, -1, -1):
 		# Ignore the signs occuring in parentheses
 		if expr_str[i] == '(':
 			depth += 1
 		elif expr_str[i] == ')':
 			depth -= 1
-		elif depth == 0 and expr_str[i] == char:
+		elif depth == 0 and expr_str[i] in char_dict.keys():
 			left_expr = parse_expr(expr_str[0:i])
 			right_expr = parse_expr(expr_str[i+1:len(expr_str)])
-			return (tag, left_expr, right_expr)
+			return (char_dict[expr_str[i]], left_expr, right_expr)
 	return None
 
 # Parse an arithmetic expression
 
 def parse_expr(expr_str):
-	expr = parse_binop(expr_str, '-', SUB)
+	expr = parse_binop(expr_str, {'-': SUB, '+': ADD})
 	if expr: return expr
-	expr = parse_binop(expr_str, '+', ADD)
-	if expr: return expr
-	expr = parse_binop(expr_str, '*', MUL)
-	if expr: return expr
-	expr = parse_binop(expr_str, '/', DIV)
+	expr = parse_binop(expr_str, {'*': MUL, '/': DIV})
 	if expr: return expr
 	if expr_str[0] == '(':
 		return parse_expr(expr_str[1:-1])
