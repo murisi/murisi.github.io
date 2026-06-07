@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zunde Upon Zongwe | Vumba Mountains Retreat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Flatpickr Calendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #f9fafb;
+            color: #374151;
+        }
+        
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.4), rgba(17, 24, 39, 0.7)), url('https://a0.muscache.com/im/pictures/miso/Hosting-1399180238803627310/original/7887fd3d-a70e-4569-8cf1-e3aef346663c.jpeg?im_w=1200');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        /* Carousel dot active state */
+        .dot.active {
+            background-color: white;
+            opacity: 1;
+        }
+
+        /* Flatpickr Custom Theme to match Zunde's Green */
+        .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, 
+        .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, 
+        .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, 
+        .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, 
+        .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, 
+        .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, 
+        .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, 
+        .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, 
+        .flatpickr-day.endRange.nextMonthDay {
+            background: #15803d !important;
+            border-color: #15803d !important;
+        }
+    </style>
+</head>
+<body class="smooth-scroll antialiased">
+
+    <!-- Navigation -->
+    <nav class="absolute w-full z-10 top-0 text-white p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold tracking-wider">ZUNDE<br><span class="text-sm font-normal tracking-widest uppercase">Upon Zongwe</span></div>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-wider items-center">
+                <a href="#about" class="hover:text-green-300 transition-colors">Our Vision</a>
+                <a href="#accommodations" class="hover:text-green-300 transition-colors">Accommodations</a>
+                <a href="#gallery" class="hover:text-green-300 transition-colors">Gallery</a>
+                <a href="#booking" class="bg-green-700 hover:bg-green-600 px-5 py-2 rounded transition-colors shadow">Book Direct</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-3xl text-white mt-16">
+            <p class="text-sm md:text-base uppercase tracking-widest mb-4 font-semibold text-green-300">Vumba Mountains, Zimbabwe</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">A Rainforest Retreat</h1>
+            <p class="text-lg md:text-xl mb-10 font-light drop-shadow-md leading-relaxed">
+                Tucked in the misty heights of Vumba's Cloudlands—where the clouds feel close enough to touch. Slow down, unwind, and reconnect with nature.
+            </p>
+            <a href="#accommodations" class="inline-block bg-white text-gray-900 font-semibold px-8 py-4 rounded shadow-lg hover:bg-gray-100 transition duration-300">View Our Sanctuaries</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-900 mb-6 font-serif">A Harmonious Way of Living</h2>
+            <p class="text-lg leading-relaxed text-gray-600 mb-6">
+                Zunde Upon Zongwe is a peaceful 12-acre smallholding rooted in a deep respect for nature and community. Our vision is to nurture a thriving food forest—one that nourishes both people and the resident Samango monkeys who call this landscape home.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-center">
+                <div class="p-6">
+                    <i class="fas fa-leaf text-4xl text-green-700 mb-4"></i>
+                    <h3 class="font-serif text-xl font-semibold mb-2">Sustainable Design</h3>
+                    <p class="text-gray-600 text-sm">Units built using reclaimed materials, repurposed fittings, and timber sustainably harvested from the property.</p>
+                </div>
+                <div class="p-6">
+                    <i class="fas fa-water text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="font-serif text-xl font-semibold mb-2">Spring Water & Solar</h3>
+                    <p class="text-gray-600 text-sm">Enjoy hot showers fed by pure mountain spring water, and off-grid charm fully powered by solar energy.</p>
+                </div>
+                <div class="p-6">
+                    <i class="fas fa-wifi text-4xl text-gray-700 mb-4"></i>
+                    <h3 class="font-serif text-xl font-semibold mb-2">Modern Comfort</h3>
+                    <p class="text-gray-600 text-sm">When you're ready to reconnect, our fast, reliable high-speed internet ensures you're just a click away.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations Section -->
+    <section id="accommodations" class="py-20 px-6 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-16 font-serif">Our Accommodations</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Listing 1: Kwetu Loft -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div id="carousel-kwetu" class="h-72 relative group bg-gray-200">
+                        <div class="absolute top-4 right-4 z-10 bg-white px-3 py-1 text-sm font-semibold text-gray-800 rounded shadow">2 Guests • 1 Bed • Studio</div>
+                        <div class="carousel-images w-full h-full relative">
+                            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1394471362825478500/original/f61e7e3d-24b7-4b4c-b233-986790606876.jpeg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 z-10" alt="Kwetu Loft Bedroom">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 z-0" alt="Kwetu Kitchen">
+                            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 z-0" alt="Kwetu Veranda">
+                            <img src="https://images.unsplash.com/photo-1522336688220-431fae8a715a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 z-0" alt="Kwetu Firepit">
+                        </div>
+                        <button onclick="changeSlide('carousel-kwetu', -1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full shadow-md flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"><i class="fas fa-chevron-left text-sm"></i></button>
+                        <button onclick="changeSlide('carousel-kwetu', 1)" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full shadow-md flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"><i class="fas fa-chevron-right text-sm"></i></button>
+                        <div class="carousel-dots absolute bottom-4 left-0 right-0 z-20 flex justify-center space-x-2">
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 active shadow"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 shadow"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 shadow"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 shadow"></span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">Kwetu Loft</h3>
+                        <p class="text-sm text-green-700 uppercase tracking-wide font-semibold mb-4">Stylish Studio in Vumba</p>
+                        <p class="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">
+                            Tucked at the foot of Lion's Head Mountain, Kwetu offers a rare blend of rustic charm and modern convenience. The Loft features a cozy double bed, a comfortable couch, and a striking raw-edge dining table with uninterrupted mountain views. With north and south facing balconies, you'll have front-row seats to the ever-changing beauty of the mountains. 
+                        </p>
+                        <button onclick="document.getElementById('property-select').value='kwetu'; document.getElementById('booking').scrollIntoView();" class="w-full bg-gray-900 text-white font-semibold py-3 rounded hover:bg-gray-800 transition">Inquire About Kwetu</button>
+                    </div>
+                </div>
+
+                <!-- Listing 2: Ferntree Cottage -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                    <div id="carousel-ferntree" class="h-72 relative group bg-gray-200">
+                        <div class="absolute top-4 right-4 z-10 bg-white px-3 py-1 text-sm font-semibold text-gray-800 rounded shadow">2 Guests • 1 Bedroom</div>
+                        <div class="carousel-images w-full h-full relative">
+                            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1399180238803627310/original/7887fd3d-a70e-4569-8cf1-e3aef346663c.jpeg?im_w=720" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 z-10" alt="Ferntree Exterior">
+                            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 z-0" alt="Ferntree Bedroom">
+                            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 z-0" alt="Ferntree Kitchen">
+                            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 z-0" alt="Ferntree Deck">
+                        </div>
+                        <button onclick="changeSlide('carousel-ferntree', -1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full shadow-md flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"><i class="fas fa-chevron-left text-sm"></i></button>
+                        <button onclick="changeSlide('carousel-ferntree', 1)" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full shadow-md flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"><i class="fas fa-chevron-right text-sm"></i></button>
+                        <div class="carousel-dots absolute bottom-4 left-0 right-0 z-20 flex justify-center space-x-2">
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 active shadow"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 shadow"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 shadow"></span>
+                            <span class="dot w-2 h-2 rounded-full bg-white/50 shadow"></span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">Ferntree Cottage</h3>
+                        <p class="text-sm text-green-700 uppercase tracking-wide font-semibold mb-4">Peaceful Rainforest Retreat</p>
+                        <p class="text-gray-600 mb-6 flex-grow text-sm leading-relaxed">
+                            A peaceful retreat for nature lovers and solitude seekers. Wake up to a symphony of birdsong. This cozy hideaway features a fully equipped kitchen, a separate bedroom, an ensuite shower, and a covered deck for soaking in the lush, green surroundings.
+                        </p>
+                        <button onclick="document.getElementById('property-select').value='ferntree'; document.getElementById('booking').scrollIntoView();" class="w-full bg-gray-900 text-white font-semibold py-3 rounded hover:bg-gray-800 transition">Inquire About Ferntree</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-6 bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">Property Gallery</h2>
+                <p class="text-gray-600 max-w-xl mx-auto">Immerse yourself in our sanctuaries. Click any photo to expand and explore all spaces up close.</p>
+            </div>
+            <div class="flex justify-center flex-wrap gap-3 mb-10">
+                <button onclick="filterGallery('all', this)" class="gallery-btn bg-green-700 text-white px-5 py-2 rounded-full font-semibold text-sm transition shadow shadow-green-700/20">All Photos</button>
+                <button onclick="filterGallery('kwetu', this)" class="gallery-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-2 rounded-full font-semibold text-sm transition">Kwetu Loft</button>
+                <button onclick="filterGallery('ferntree', this)" class="gallery-btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-5 py-2 rounded-full font-semibold text-sm transition">Ferntree Cottage</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="kwetu" onclick="openLightbox(0)">
+                    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1344471362825478500/original/f61e7e3d-24b7-4b4c-b233-986790606876.jpeg" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Kwetu Loft - Main Bedroom">
+                </div>
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="kwetu" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Kwetu Loft - Kitchen Space">
+                </div>
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="kwetu" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Kwetu Loft - Balcony View">
+                </div>
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="kwetu" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1522336688220-431fae8a715a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Kwetu Loft - Mountain Firepit">
+                </div>
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="ferntree" onclick="openLightbox(4)">
+                    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1399180238803627310/original/7887fd3d-a70e-4569-8cf1-e3aef346663c.jpeg?im_w=720" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Ferntree Cottage - Lush Exterior">
+                </div>
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="ferntree" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Ferntree Cottage - Peaceful Bedroom">
+                </div>
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="ferntree" onclick="openLightbox(6)">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Ferntree Cottage - Cozy Kitchen Lounge">
+                </div>
+                <div class="gallery-item group relative h-64 overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100" data-unit="ferntree" onclick="openLightbox(7)">
+                    <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" alt="Ferntree Cottage - Covered Rainforest Deck">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Fullscreen Lightbox Modal -->
+    <div id="gallery-lightbox" class="fixed inset-0 z-50 hidden bg-black/95 flex flex-col justify-between p-4 md:p-8 select-none">
+        <div class="w-full flex justify-end text-white text-3xl">
+            <button onclick="closeLightbox()" class="hover:text-gray-300 transition p-2"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="flex items-center justify-between flex-grow max-w-5xl mx-auto w-full relative">
+            <button onclick="navLightbox(-1)" class="text-white text-3xl p-4 hover:text-green-400 transition absolute left-0 z-10 bg-black/30 rounded-full md:relative md:bg-transparent"><i class="fas fa-chevron-left"></i></button>
+            <div class="w-full h-[65vh] flex items-center justify-center px-4">
+                <img id="lightbox-main-img" src="" class="max-w-full max-h-full object-contain rounded shadow-2xl transition-all duration-300" alt="Expanded image view">
+            </div>
+            <button onclick="navLightbox(1)" class="text-white text-3xl p-4 hover:text-green-400 transition absolute right-0 z-10 bg-black/30 rounded-full md:relative md:bg-transparent"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="text-center text-white pb-4">
+            <p id="lightbox-caption" class="text-lg font-serif mb-1"></p>
+            <p id="lightbox-counter" class="text-xs tracking-widest text-gray-400 uppercase"></p>
+        </div>
+    </div>
+
+    <!-- Direct Booking Section with Calendar -->
+    <section id="booking" class="py-20 px-6 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold font-serif text-gray-900 mb-4">Book Your Stay Directly</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Check our live availability below and send us a direct inquiry for the best rates. As Superhosts, we pride ourselves on fast responses.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+                
+                <!-- Left Column: Interactive Calendar -->
+                <div class="w-full lg:w-5/12 flex flex-col">
+                    <h3 class="text-xl font-bold font-serif text-gray-900 mb-2">Check Availability</h3>
+                    <p id="calendar-status" class="text-sm text-green-700 font-semibold mb-6">
+                        <i class="fas fa-spinner fa-spin mr-2"></i>Loading live dates from Airbnb...
+                    </p>
+                    
+                    <!-- Flatpickr Inline Calendar Container -->
+                    <div class="w-full flex justify-center bg-gray-50 rounded-lg border border-gray-200 p-2 overflow-hidden shadow-inner">
+                        <input type="text" id="inline-calendar" class="hidden">
+                    </div>
+                    <p class="text-xs text-gray-400 mt-4 text-center"><i class="fas fa-info-circle mr-1"></i>Greyed out dates are already booked.</p>
+                </div>
+                
+                <!-- Right Column: Booking Form -->
+                <div class="w-full lg:w-7/12">
+                    <form action="mailto:bookings@zunde-upon-zongwe.com" method="POST" enctype="text/plain" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" name="First Name" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-gray-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" name="Last Name" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-gray-50">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" name="Email" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-gray-50">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Check-in Date</label>
+                                <input type="date" id="checkin-input" name="Check-in" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-gray-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Check-out Date</label>
+                                <input type="date" id="checkout-input" name="Check-out" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-gray-50">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Which property are you interested in?</label>
+                            <select id="property-select" name="Property" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-gray-50">
+                                <option value="both">Not sure yet / Both</option>
+                                <option value="kwetu">Kwetu Loft</option>
+                                <option value="ferntree">Ferntree Cottage</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message or Special Requests</label>
+                            <textarea name="Message" rows="4" placeholder="Tell us a little bit about your trip..." class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-gray-50"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-4 rounded shadow transition-colors text-lg">
+                            Send Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-2xl font-serif text-white mb-4 tracking-wider">ZUNDE<br><span class="text-xs font-normal tracking-widest uppercase">Upon Zongwe</span></div>
+            <p class="mb-2">Vumba Mountains, Manicaland Province, Zimbabwe</p>
+            <p class="mb-6 text-sm">Hosted by Rumbidzai, Rati & Murisi</p>
+            <p class="text-sm">&copy; 2026 Zunde Upon Zongwe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Flatpickr & iCal Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            // Airbnb blocks direct fetch due to CORS, so we use a public proxy to read the text data
+            const icalUrl = "https://www.airbnb.com/calendar/ical/1399180238803627310.ics?t=ae5fe24f0e514066b6ff8705233a5ddc";
+            const proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(icalUrl);
+            const statusEl = document.getElementById("calendar-status");
+            
+            let blockedDates = [];
+
+            try {
+                const response = await fetch(proxyUrl);
+                if (!response.ok) throw new Error("Network error fetching iCal");
+                const icsData = await response.text();
+                
+                // Parse the ics file for DTSTART and DTEND
+                const lines = icsData.split(/\r?\n/);
+                let currentEvent = {};
+                
+                for (let line of lines) {
+                    if (line.startsWith('BEGIN:VEVENT')) {
+                        currentEvent = {};
+                    } else if (line.startsWith('DTSTART')) {
+                        const match = line.match(/:(\d{4})(\d{2})(\d{2})/);
+                        if (match) currentEvent.start = `${match[1]}-${match[2]}-${match[3]}`;
+                    } else if (line.startsWith('DTEND')) {
+                        const match = line.match(/:(\d{4})(\d{2})(\d{2})/);
+                        if (match) {
+                            // Flatpickr disables boundaries inclusively. We subtract 1 day from DTEND 
+                            // because checkout day itself is available for a new check-in.
+                            let endDate = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00`);
+                            endDate.setDate(endDate.getDate() - 1);
+                            currentEvent.end = endDate.toISOString().split('T')[0];
+                        }
+                    } else if (line.startsWith('END:VEVENT')) {
+                        if (currentEvent.start && currentEvent.end) {
+                            blockedDates.push({ from: currentEvent.start, to: currentEvent.end });
+                        }
+                    }
+                }
+                statusEl.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Select your dates on the calendar.';
+                statusEl.classList.replace('text-green-700', 'text-gray-600');
+            } catch (error) {
+                console.error("Failed to load iCal dates:", error);
+                statusEl.innerHTML = '<i class="fas fa-exclamation-circle mr-2 text-red-500"></i>Could not load live dates. Please submit your preferred dates manually.';
+            }
+
+            // Initialize the flatpickr interactive calendar
+            flatpickr("#inline-calendar", {
+                inline: true,
+                mode: "range",
+                minDate: "today",
+                disable: blockedDates,
+                showMonths: window.innerWidth >= 1024 ? 1 : 1, // Using 1 month to ensure it fits the new grid nicely
+                onChange: function(selectedDates, dateStr, instance) {
+                    // Update check-in and check-out fields automatically
+                    if (selectedDates.length > 0) {
+                        const checkin = selectedDates[0];
+                        const tzOffset = checkin.getTimezoneOffset() * 60000; // adjust for local timezone to prevent off-by-one errors
+                        document.getElementById("checkin-input").value = new Date(checkin.getTime() - tzOffset).toISOString().split('T')[0];
+                    }
+                    if (selectedDates.length === 2) {
+                        const checkout = selectedDates[1];
+                        const tzOffset = checkout.getTimezoneOffset() * 60000;
+                        document.getElementById("checkout-input").value = new Date(checkout.getTime() - tzOffset).toISOString().split('T')[0];
+                    } else {
+                        document.getElementById("checkout-input").value = "";
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Pre-existing Carousels & Gallery Filter Lightbox Logic -->
+    <script>
+        const carousels = { 'carousel-kwetu': 0, 'carousel-ferntree': 0 };
+
+        function changeSlide(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const images = carousel.querySelectorAll('.carousel-images img');
+            const dots = carousel.querySelectorAll('.carousel-dots .dot');
+            
+            let currentIndex = carousels[carouselId];
+            let newIndex = currentIndex + direction;
+
+            if (newIndex >= images.length) newIndex = 0;
+            if (newIndex < 0) newIndex = images.length - 1;
+
+            images[currentIndex].classList.remove('opacity-100', 'z-10');
+            images[currentIndex].classList.add('opacity-0', 'z-0');
+            
+            images[newIndex].classList.remove('opacity-0', 'z-0');
+            images[newIndex].classList.add('opacity-100', 'z-10');
+
+            dots[currentIndex].classList.remove('active', 'opacity-100');
+            dots[currentIndex].classList.add('bg-white/50');
+            
+            dots[newIndex].classList.add('active', 'opacity-100');
+            dots[newIndex].classList.remove('bg-white/50');
+
+            carousels[carouselId] = newIndex;
+        }
+
+        let activeGalleryIndex = 0;
+        let visibleImagesData = [];
+
+        function filterGallery(category, clickedBtn) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.gallery-btn');
+            
+            buttons.forEach(btn => {
+                btn.classList.replace('bg-green-700', 'bg-gray-100');
+                btn.classList.replace('text-white', 'text-gray-700');
+                btn.classList.remove('shadow', 'shadow-green-700/20');
+            });
+            clickedBtn.classList.replace('bg-gray-100', 'bg-green-700');
+            clickedBtn.classList.replace('text-gray-700', 'text-white');
+            clickedBtn.classList.add('shadow', 'shadow-green-700/20');
+
+            items.forEach(item => {
+                if(category === 'all' || item.getAttribute('data-unit') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openLightbox(initialIndex) {
+            const allItems = document.querySelectorAll('.gallery-item');
+            visibleImagesData = [];
+            let activeSelectionIndex = 0;
+
+            allItems.forEach((item) => {
+                if (item.style.display !== 'none') {
+                    const imgNode = item.querySelector('img');
+                    visibleImagesData.push({
+                        src: imgNode.src,
+                        alt: imgNode.alt,
+                        originalIndex: parseInt(item.getAttribute('onclick').match(/\d+/)[0])
+                    });
+                    
+                    if (parseInt(item.getAttribute('onclick').match(/\d+/)[0]) === initialIndex) {
+                        activeSelectionIndex = visibleImagesData.length - 1;
+                    }
+                }
+            });
+
+            activeGalleryIndex = activeSelectionIndex;
+            syncLightboxContent();
+            
+            document.getElementById('gallery-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('gallery-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function navLightbox(dir) {
+            if (visibleImagesData.length <= 1) return;
+            
+            activeGalleryIndex += dir;
+            if (activeGalleryIndex >= visibleImagesData.length) activeGalleryIndex = 0;
+            if (activeGalleryIndex < 0) activeGalleryIndex = visibleImagesData.length - 1;
+            
+            syncLightboxContent();
+        }
+
+        function syncLightboxContent() {
+            const targetData = visibleImagesData[activeGalleryIndex];
+            if (!targetData) return;
+
+            const modalImg = document.getElementById('lightbox-main-img');
+            modalImg.src = targetData.src;
+            document.getElementById('lightbox-caption').innerText = targetData.alt;
+            document.getElementById('lightbox-counter').innerText = `Photo ${activeGalleryIndex + 1} of ${visibleImagesData.length}`;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('gallery-lightbox');
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') navLightbox(1);
+                if (e.key === 'ArrowLeft') navLightbox(-1);
+            }
+        });
+    </script>
+</body>
+</html>
